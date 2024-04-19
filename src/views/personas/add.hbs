@@ -1,0 +1,80 @@
+<div class="conatiner p-4">
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+            <div class="card text-center">
+                <div class="card-header">
+                    <h3 class="text-uppercase">CREAR NUEVA PERSONA</h3>
+                </div>
+                <div class="card-body">
+                    <form action="/add" method="post">
+                        <div class="input-group mt-2">
+                            <label for="nombre" class="input-group-text">Nombre</label>
+                            <input class="form-control" type="text" name="nombre" id="nombre" placeholder="Ejemplo: Luis Angel" autofocus required>
+                        </div>
+                        <div class="input-group mt-2">
+                            <label for="apellido" class="input-group-text">Apellido</label>
+                            <input class="form-control" type="text" name="apellido" id="apellido" placeholder="Ejemplo: Fernandez" required>
+                        </div>
+                        <div class="input-group mt-2">
+                            <label for="matricula" class="input-group-text">Matricula</label>
+                            <input class="form-control" type="text" name="matricula" id="matricula" placeholder="1-20-0000" required>
+                        </div>
+                        <div class="input-group mt-2">
+                            <label for="recinto" class="input-group-text">Recinto</label>
+                                <select class="form-select" id="recinto" name="recinto" aria-placeholder="Recinto"  required > 
+                                <option value="" disabled selected style="display:none;" class="noriely">Recinto</option>
+                                <option value="Santiago-Sede">Santiago-Sede</option>
+                                <option value="Santo Domingo de Guzmán">Santo Domingo de Guzmán</option>
+                                <option value="Santo Domingo Oriental">Santo Domingo Oriental</option>
+                                <option value="Mao">Mao</option>
+                                <option value="Dajabón">Dajabón</option>
+                                <option value="Gaspar Hernández">Gaspar Hernández</option>
+                            </select>
+                        </div>
+                        <div class="input-group mt-2">
+                            <label for="carrera" class="input-group-text">Carrera</label>
+                            <select class="form-select" id="carrera" name="carrera" required>
+                                {{#each carreras}}
+                                    <option value="{{this.ID_Carrera}}">{{this.Carrera}}</option>
+                                {{/each}}
+                            </select>
+                        </div>                    
+                        <div class="input-group mt-2">
+                            <label for="materia" class="input-group-text">Materia</label>
+                            <select class="form-select" id="materia" name="materia" required>
+                                {{#each materias}}
+                                    <option value="{{this.ID_Materia}}">{{this.Materia}}</option>
+                                {{/each}}
+                            </select>
+                        </div>
+                        <!--
+                        <div class="input-group mt-2">
+                            <label for="carrera" class="input-group-text">Carrera</label>
+                            <select class="form-select" id="carrera" name="carrera" aria-placeholder="Carrera" required> 
+                                <option value="" disabled selected style="display:none;">Carrera</option>
+                                <option value="Ingeniería en Sistemas Computacionales" class="combobox">Ingeniería en Sistemas Computacionales</option>
+                                <option value="Ingeniería en Software">Ingeniería en Software</option>
+                            </select>
+                        </div>                    
+                        <div class="input-group mt-2">
+                            <label for="materia" class="input-group-text">Materia</label>
+                            <select  class="form-select" id="materia" name="materia" aria-placeholder="Materia" required> 
+                                <option value="" disabled selected style="display:none;">Materia</option>
+                                <option value="Proyecto Integrador" class="combobox">Proyecto Integrador</option>
+                                <option value="Ingles 1">Ingles 1</option>
+                            </select>
+                        </div>
+                        -->
+                        <div class="input-group mt-2">
+                            <label for="rfid" class="input-group-text">RFID</label>
+                            <input class="form-control" type="text" name="rfid" id="rfid" placeholder="RFID-000000" required>
+                        </div>
+                        <div class="form-group mt-4 d-grid gap-2">
+                            <button class="btn btn-success"> Crear</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
